@@ -1,4 +1,4 @@
-name: qr_flutter
+name: qr_flutter_app
 description: QR scan app for scouts
 
 dependencies:
