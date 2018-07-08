@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "77298008643",
+    "firebase_url": "https://flutter-qr-test.firebaseio.com",
+    "project_id": "flutter-qr-test",
+    "storage_bucket": "flutter-qr-test.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:77298008643:android:a1bd959b93903331",
+        "android_client_info": {
+          "package_name": "org.citruscircuits.qrflutter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "77298008643-lu3ojckn9q8bq2oan1i8vffs5aival7c.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDMR5O9lBnEHbfJlATFnHQEg9W377v__mk"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

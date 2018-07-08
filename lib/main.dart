@@ -1,8 +1,26 @@
-import 'package:flutter/material.dart';
+import 'dart:async';
+import 'dart:io' show Platform;
 
-void main() => runApp(new MyApp());
+import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_database/firebase_database.dart';
+
+import 'package:qr_flutter/qr_flutter.dart';
+
+part 'firebase.dart';
+
+
+Future<void> main() async {
+  final FirebaseApp app = await configureDatabase();
+  final FirebaseDatabase database = new FirebaseDatabase(app: app);
+
+  runApp(new MyApp(database: database));
+}
 
 class MyApp extends StatelessWidget {
+  final FirebaseDatabase database;
+  MyApp({this.database});
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
@@ -19,13 +37,14 @@ class MyApp extends StatelessWidget {
         // counter didn't reset back to zero; the application is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(title: 'Flutter Demo Home Page'),
+      home: new MyHomePage(database: database),
     );
   }
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
+  final FirebaseDatabase database;
+  MyHomePage({this.database});
 
   // This widget is the home page of your application. It is stateful, meaning
   // that it has a State object (defined below) that contains fields that affect
@@ -35,8 +54,6 @@ class MyHomePage extends StatefulWidget {
   // case the title) provided by the parent (in this case the App widget) and
   // used by the build method of the State. Fields in a Widget subclass are
   // always marked "final".
-
-  final String title;
 
   @override
   _MyHomePageState createState() => new _MyHomePageState();
@@ -68,7 +85,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: new AppBar(
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
-        title: new Text(widget.title),
+        title: new Text("App title"),
       ),
       body: new Center(
         // Center is a layout widget. It takes a single child and positions it
@@ -90,11 +107,11 @@ class _MyHomePageState extends State<MyHomePage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             new Text(
-              'You have pushed the button this many times:',
+              'Cycle Number',
             ),
-            new Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.display1,
+            new QrImage(
+              data: 'test data',
+              size: 200.0,
             ),
           ],
         ),
