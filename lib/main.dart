@@ -28,53 +28,42 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: new MyHomePage(database: database),
+      home: new Scaffold(
+        appBar: new AppBar(title: new Text('Scout QR Code App')),
+        body: new Center(
+          child: new QrDisplay(database: database),
+        ),
+        // Create new class for scan action button to allow snackbars
+        floatingActionButton: new FloatingActionButton(
+          tooltip: 'Increment',
+          child: new Icon(Icons.add),
+        ),
+      ),
     );
   }
 }
 
-class MyHomePage extends StatefulWidget {
+class QrDisplay extends StatefulWidget {
   final FirebaseDatabase database;
-  MyHomePage({this.database});
-
-  @override
-  _MyHomePageState createState() => new _MyHomePageState();
+  QrDisplay({this.database});
+  _QrDisplayState createState() => new _QrDisplayState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class _QrDisplayState extends State<QrDisplay> {
   @override
   Widget build(BuildContext context) {
-    return new Scaffold(
-      appBar: new AppBar(
-        title: new Text("App title"),
-      ),
-      body: new Center(
-        child: new Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            new Text(
-              'Cycle Number',
-            ),
-            new QrImage(
-              data: 'test data',
-              size: 200.0,
-            ),
-          ],
+    return new Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: <Widget>[
+        new Text(
+          'Cycle Number',
         ),
-      ),
-      floatingActionButton: new FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: new Icon(Icons.add),
-      ),
+        new QrImage(
+          data: 'test data',
+          size: 200.0,
+        ),
+      ],
+
     );
   }
 }
