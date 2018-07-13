@@ -14,7 +14,8 @@ part 'firebase.dart';
 Future<void> main() async {
   final FirebaseApp app = await configureDatabase();
   final FirebaseDatabase database = new FirebaseDatabase(app: app);
-
+  // Forces orientation to portraitUp
+  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]);
   runApp(new MyApp(database: database));
 }
 
