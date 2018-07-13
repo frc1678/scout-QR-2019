@@ -54,17 +54,21 @@ class _QrDisplayState extends State<QrDisplay> {
   @override
   Widget build(BuildContext context) {
     return new Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         new Text(
-          'Cycle Number',
+          'Cycle: -',
+          style: Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3, color: Colors.indigo, fontSizeFactor: 1.25),
         ),
         new QrImage(
           data: 'test data',
-          size: 200.0,
+          size: MediaQuery.of(context).size.width*0.95,
         ),
+        new Text(
+          'Version: 0.1',
+          style: Theme.of(context).textTheme.caption.apply(fontSizeFactor: 2.5),
+        )
       ],
-
     );
   }
 }
