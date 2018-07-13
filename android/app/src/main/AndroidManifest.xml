@@ -14,8 +14,8 @@
          FlutterApplication and put your custom class here. -->
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="qr_flutter"
-        android:icon="@mipmap/ic_launcher">
+        android:label="1678 QR"
+        android:icon="@mipmap/qr_icon">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
