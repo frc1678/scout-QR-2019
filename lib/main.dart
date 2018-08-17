@@ -10,6 +10,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 part 'firebase.dart';
 
+final version = '0.2';
 
 // Creates a single, global instance
 final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -53,6 +54,23 @@ class QrDisplay extends StatefulWidget {
 }
 
 class _QrDisplayState extends State<QrDisplay> {
+  bool _isOutdatedVersion = false;
+
+  @override
+  void initState() {
+    super.initState();
+    widget.database.reference().child('appVersions/scoutQR').onValue.listen((Event event) {
+      setState(() {{
+        // Checks if the latest version is the same version of the app
+        if (event.snapshot.value == version) {
+          _isOutdatedVersion = false;
+        } else {
+          _isOutdatedVersion = true;
+        }
+        }});
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return new Column(
@@ -67,8 +85,11 @@ class _QrDisplayState extends State<QrDisplay> {
           size: MediaQuery.of(context).size.width*0.95,
         ),
         new Text(
-          'Version: 0.1',
-          style: Theme.of(context).textTheme.caption.apply(fontSizeFactor: 2.5),
+          'Version: $version',
+          style: _isOutdatedVersion
+              // If the app is outdated, the version text becomes red + bold.
+              ? Theme.of(context).textTheme.caption.apply(fontSizeFactor: 2.5, color: Colors.red, fontWeightDelta: 2)
+              : Theme.of(context).textTheme.caption.apply(fontSizeFactor: 2.5),
         )
       ],
     );
