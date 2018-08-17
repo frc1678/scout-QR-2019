@@ -11,17 +11,21 @@ import 'package:qr_flutter/qr_flutter.dart';
 part 'firebase.dart';
 
 
+// Creates a single, global instance
+final FirebaseDatabase database = FirebaseDatabase.instance;
+
 Future<void> main() async {
   final FirebaseApp app = await configureDatabase();
-  final FirebaseDatabase database = new FirebaseDatabase(app: app);
+  // This creates the database instance using the configuration.
+  // The database variable is not declared here because it would be local and
+  // it should be a global database instance.
+  new FirebaseDatabase(app: app);
   // Forces orientation to portraitUp
   SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]);
-  runApp(new MyApp(database: database));
+  runApp(new MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  final FirebaseDatabase database;
-  MyApp({this.database});
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
@@ -32,7 +36,7 @@ class MyApp extends StatelessWidget {
       home: new Scaffold(
         appBar: new AppBar(title: new Text('Scout QR Code App')),
         body: new Center(
-          child: new QrDisplay(database: database),
+          child: new QrDisplay(),
         ),
         // Create new class for scan action button to allow snackbars
         floatingActionButton: new FloatingActionButton(
@@ -45,8 +49,6 @@ class MyApp extends StatelessWidget {
 }
 
 class QrDisplay extends StatefulWidget {
-  final FirebaseDatabase database;
-  QrDisplay({this.database});
   _QrDisplayState createState() => new _QrDisplayState();
 }
 
