@@ -1,1 +1,2 @@
 ios/Podfile linguist-vendored
+plugins/* linguist-vendored
