@@ -57,7 +57,7 @@ class _QrDisplayState extends State<QrDisplay> {
   @override
   void initState() {
     super.initState();
-    widget.database.reference().child('appVersions/scoutQR').onValue.listen((Event event) {
+    database.reference().child('appVersions/scoutQR').onValue.listen((Event event) {
       setState(() {{
         // Checks if the latest version is the same version of the app
         if (event.snapshot.value == version) {
