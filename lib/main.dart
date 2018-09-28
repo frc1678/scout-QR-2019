@@ -47,25 +47,36 @@ class MyApp extends StatelessWidget {
   }
 }
 
+// Displays cycle number, QR code, and version number
+// This is a StatefulWidget since it updates when data is recieved from the firebase listener
 class QrDisplay extends StatefulWidget {
   _QrDisplayState createState() => new _QrDisplayState();
 }
 
 class _QrDisplayState extends State<QrDisplay> {
+  // Defaults to show "Cycle: -" if data has not been pulled from firebase yet
+  var _qrCode = '-|';
   bool _isOutdatedVersion = false;
 
   @override
   void initState() {
     super.initState();
+    // Listens for changes to the QRcode child on firebase
+    database.reference().child('QRcode').onValue.listen((Event event) {
+      setState(() {
+        // Sets _qrCode to the new value + sets state
+        _qrCode = event.snapshot.value;
+      });
+    });
     database.reference().child('appVersions/scoutQR').onValue.listen((Event event) {
-      setState(() {{
+      setState(() {
         // Checks if the latest version is the same version of the app
         if (event.snapshot.value == version) {
           _isOutdatedVersion = false;
         } else {
           _isOutdatedVersion = true;
         }
-        }});
+      });
     });
   }
 
@@ -74,14 +85,21 @@ class _QrDisplayState extends State<QrDisplay> {
     return new Column(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
+        // Displays cycle number (data before "|" symbol)
         new Text(
-          'Cycle: -',
+          'Cycle: ${_qrCode.split("|")[0]}',
           style: Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3, color: Colors.indigo, fontSizeFactor: 1.25),
         ),
+        // Creates QR code from data stored in _qrCode
         new QrImage(
-          data: 'test data',
+          data: _qrCode,
+          // Scales to 95% of screen width
           size: MediaQuery.of(context).size.width*0.95,
+          // Highest possible QR error correction
+          // Used for glare and/or to scan QR code faster
+          errorCorrectionLevel: 3,
         ),
+        // Used to check if users are on the latest version
         new Text(
           'Version: $version',
           style: _isOutdatedVersion
