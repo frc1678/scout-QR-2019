@@ -68,3 +68,15 @@ You can add remotes that reference another person's fork.  This allows you to lo
 * When contributing to someone else's repo, check out the branch on their repo that you want to contribute to before creating and checking out a new branch.
 
 To add a remote, use `git remote add <name_of_person> https://github.com/<their_username>/qr-flutter-2018.git`.
+
+### Downgrading your Flutter SDK
+
+If you're working with a project using an older version of flutter, you may need to downgrade your SDK.
+
+1. Check what version the project is using
+    1. Open `metadata`
+    1. Copy the commit hash under `revision` (e.g. `f9bb4289e9fd861d70ae78bcc3a042ef1b35cc9d`)
+1. Navigate into your flutter directory
+    * Normally, this is located at `~/flutter`
+1. `git checkout <commit hash>`
+1. `flutter doctor`
