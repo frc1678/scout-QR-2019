@@ -158,6 +158,14 @@ class _QrScannerState extends State<QrScanner> {
         // Send to firebase
         widget.database.reference().child('TempQRTeamInMatchDatas').child(
             qrcode.split('|')[0]).set(qrcode);
+      } else if (qrcode.startsWith('S!') &&
+          qrcode.contains('_') &&
+          qrcode.contains('|') &&
+          int.tryParse(qrcode.split('_')[0].split('S!')[1]) != null &&
+          int.tryParse(qrcode.split('|')[0].split('_')[1]) != null
+      ) {
+        widget.database.reference().child('TempSuperData').child(
+            qrcode.split('|')[0]).set(qrcode);
       }
       else {
         showDialog(
