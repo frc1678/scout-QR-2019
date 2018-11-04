@@ -11,7 +11,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 part 'firebase.dart';
 
-final version = '0.2';
+final version = '0.4';
 
 // Creates a single, global instance
 final FirebaseDatabase database = FirebaseDatabase.instance;
