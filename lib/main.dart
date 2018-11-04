@@ -65,7 +65,13 @@ class _QrDisplayState extends State<QrDisplay> {
     database.reference().child('QRcode').onValue.listen((Event event) {
       setState(() {
         // Sets _qrCode to the new value + sets state
-        _qrCode = event.snapshot.value;
+        if (event.snapshot.value != null &&
+            event.snapshot.value.contains('|') &&
+            int.tryParse(event.snapshot.value.split('|')[0]) != null) {
+          _qrCode = event.snapshot.value;
+        } else {
+          _qrCode = '-|';
+        }
       });
     });
     database.reference().child('appVersions/scoutQR').onValue.listen((Event event) {
