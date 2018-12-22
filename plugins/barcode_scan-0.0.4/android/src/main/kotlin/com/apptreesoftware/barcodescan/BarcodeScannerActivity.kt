@@ -62,11 +62,11 @@ class BarcodeScannerActivity : Activity(), ZXingScannerView.ResultHandler {
         val array = arrayOf(Manifest.permission.CAMERA)
         if (ContextCompat
                 .checkSelfPermission(this, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
+            ActivityCompat.requestPermissions(this, array,
+                    REQUEST_TAKE_PHOTO_CAMERA_PERMISSION)
             if (!ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.CAMERA)) {
                 finishWithError("PERMISSION_NOT_GRANTED")
             }
-            ActivityCompat.requestPermissions(this, array,
-                    REQUEST_TAKE_PHOTO_CAMERA_PERMISSION)
             return true
         }
         return false
