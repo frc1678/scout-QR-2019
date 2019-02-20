@@ -11,7 +11,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 part 'firebase.dart';
 
-final version = '1.0';
+final version = '1.1';
 
 // Creates a single, global instance
 final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -165,10 +165,10 @@ class _QrScannerState extends State<QrScanner> {
         widget.database.reference().child('tempTIMDs').child(
             qrcode.split('|')[0]).set(qrcode);
       } else if (qrcode.startsWith('S!') &&
-          qrcode.contains('_') &&
+          qrcode.contains('-') &&
           qrcode.contains('|') &&
-          int.tryParse(qrcode.split('_')[0].split('S!')[1]) != null &&
-          int.tryParse(qrcode.split('|')[0].split('_')[1]) != null
+          qrcode.contains('Q') &&
+          int.tryParse(qrcode.split('-')[0].split('Q')[1]) != null
       ) {
         widget.database.reference().child('tempSuper').child(
             qrcode.split('|')[0]).set(qrcode);
