@@ -5,14 +5,14 @@ Future<FirebaseApp> configureDatabase() async {
       name: 'db2',
       options: Platform.isIOS
         ? const FirebaseOptions(
-          googleAppID: '1:77298008643:ios:c32df596c9e96d79',
+          googleAppID: '1:413343640093:ios:a1bd959b93903331',
           gcmSenderID: '',
-          databaseURL: 'https://flutter-qr-test.firebaseio.com',
+          databaseURL: 'https://field-test-2019.firebaseio.com',
         )
         : const FirebaseOptions( // Android
-          googleAppID: '1:77298008643:android:a1bd959b93903331',
-          apiKey: 'AIzaSyCvE9mcxD7hLOajU_O6AudbzyYruvzCNmY',
-          databaseURL: 'https://flutter-qr-test.firebaseio.com',
+          googleAppID: '1:413343640093:android:2829f0a89f52ae04',
+          apiKey: 'AIzaSyA_veCdf2hSw4HPm0y0t-WUTRzCpyziTfo',
+          databaseURL: 'https://field-test-2019.firebaseio.com',
         )
   );
 }

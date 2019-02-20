@@ -11,7 +11,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 part 'firebase.dart';
 
-final version = '0.4';
+final version = '1.0';
 
 // Creates a single, global instance
 final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -62,7 +62,7 @@ class _QrDisplayState extends State<QrDisplay> {
   void initState() {
     super.initState();
     // Listens for changes to the QRcode child on firebase
-    database.reference().child('QRcode').onValue.listen((Event event) {
+    database.reference().child('scoutManagement/QRcode').onValue.listen((Event event) {
       setState(() {
         // Sets _qrCode to the new value + sets state
         if (event.snapshot.value != null &&
@@ -162,7 +162,7 @@ class _QrScannerState extends State<QrScanner> {
           int.tryParse(qrcode.split('|')[0].split('-')[1]) != null
       ) {
         // Send to firebase
-        widget.database.reference().child('TempQRTeamInMatchDatas').child(
+        widget.database.reference().child('tempTIMDs').child(
             qrcode.split('|')[0]).set(qrcode);
       } else if (qrcode.startsWith('S!') &&
           qrcode.contains('_') &&
@@ -170,7 +170,7 @@ class _QrScannerState extends State<QrScanner> {
           int.tryParse(qrcode.split('_')[0].split('S!')[1]) != null &&
           int.tryParse(qrcode.split('|')[0].split('_')[1]) != null
       ) {
-        widget.database.reference().child('TempSuperData').child(
+        widget.database.reference().child('tempSuper').child(
             qrcode.split('|')[0]).set(qrcode);
       }
       else {
