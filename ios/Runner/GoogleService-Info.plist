@@ -7,21 +7,21 @@
 	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
 	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>843068951447-digj23fiq90obo2hm8avehlo2emegvgo.apps.googleusercontent.com</string>
+	<string>590951349495-fsuvkr96lrmi6s45ht2rv6q1nqnavm2l.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.843068951447-digj23fiq90obo2hm8avehlo2emegvgo</string>
+	<string>com.googleusercontent.apps.590951349495-fsuvkr96lrmi6s45ht2rv6q1nqnavm2l</string>
 	<key>API_KEY</key>
-	<string>AIzaSyCgZsck4w15PVZa8kkZWI476lIIdCcdxCk</string>
+	<string>AIzaSyCP9b7YL2A-gbNSQi7FPKQtuwLWaQIic5U</string>
 	<key>GCM_SENDER_ID</key>
-	<string>843068951447</string>
+	<string>590951349495</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>org.citruscircuits.qrflutter</string>
 	<key>PROJECT_ID</key>
-	<string>scouting-2019-cvr-e4cf3</string>
+	<string>scouting-2019-sac-2bdd7</string>
 	<key>STORAGE_BUCKET</key>
-	<string>scouting-2019-cvr-e4cf3.appspot.com</string>
+	<string>scouting-2019-sac-2bdd7.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<true></true>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -33,8 +33,8 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:843068951447:ios:a1bd959b93903331</string>
+	<string>1:590951349495:ios:a1bd959b93903331</string>
 	<key>DATABASE_URL</key>
-	<string>https://scouting-2019-cvr-e4cf3.firebaseio.com</string>
+	<string>https://scouting-2019-sac-2bdd7.firebaseio.com</string>
 </dict>
 </plist>
