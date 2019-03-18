@@ -11,7 +11,7 @@ import 'package:qr_flutter/qr_flutter.dart';
 
 part 'firebase.dart';
 
-final version = '1.4';
+final version = '1.5';
 
 // Creates a single, global instance
 final FirebaseDatabase database = FirebaseDatabase.instance;
@@ -67,10 +67,10 @@ class _QrDisplayState extends State<QrDisplay> {
         // Sets _qrCode to the new value + sets state
         if (event.snapshot.value != null &&
             event.snapshot.value.contains('|') &&
-            int.tryParse(event.snapshot.value.split('|')[0]) != null) {
+            int.tryParse(event.snapshot.value.split('_')[0]) != null) {
           _qrCode = event.snapshot.value;
         } else {
-          _qrCode = '-|';
+          _qrCode = '-_|';
         }
       });
     });
@@ -93,7 +93,7 @@ class _QrDisplayState extends State<QrDisplay> {
       children: <Widget>[
         // Displays cycle number (data before "|" symbol)
         new Text(
-          'Cycle: ${_qrCode.split("|")[0]}',
+          'Cycle: ${_qrCode.split("_")[0]}',
           style: Theme.of(context).textTheme.display3.apply(fontWeightDelta: 3, color: Colors.indigo, fontSizeFactor: 1.25),
         ),
         // Creates QR code from data stored in _qrCode
