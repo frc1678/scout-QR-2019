@@ -103,7 +103,7 @@ class _QrDisplayState extends State<QrDisplay> {
           size: MediaQuery.of(context).size.width*0.95,
           // Highest possible QR error correction
           // Used for glare and/or to scan QR code faster
-          errorCorrectionLevel: 3,
+          errorCorrectionLevel: 0,
         ),
         // Used to check if users are on the latest version
         new Text(
