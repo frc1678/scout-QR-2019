@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "590951349495",
-    "firebase_url": "https://scouting-2019-sac-2bdd7.firebaseio.com",
-    "project_id": "scouting-2019-sac-2bdd7",
-    "storage_bucket": "scouting-2019-sac-2bdd7.appspot.com"
+    "project_number": "959322619782",
+    "firebase_url": "https://scouting-2019-avr-cacf9.firebaseio.com",
+    "project_id": "scouting-2019-avr-cacf9",
+    "storage_bucket": "scouting-2019-avr-cacf9.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:590951349495:android:a1bd959b93903331",
+        "mobilesdk_app_id": "1:959322619782:android:a1bd959b93903331",
         "android_client_info": {
           "package_name": "org.citruscircuits.qrflutter"
         }
       },
       "oauth_client": [
         {
-          "client_id": "590951349495-eugf0j9dba3lepe873aqv11poktfj5he.apps.googleusercontent.com",
+          "client_id": "959322619782-sbjsisschob3gq9ris6i5d5lss2dev3a.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyAHmQsrjNA7ZsKPp6poUdG_HeILOOBzCBg"
+          "current_key": "AIzaSyCrWVk5t0-2QchRmzA7_LfOXJ2uXronJc0"
         }
       ],
       "services": {
