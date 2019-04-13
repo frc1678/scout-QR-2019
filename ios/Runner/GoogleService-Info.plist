@@ -2,39 +2,35 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
-	<string>ca-app-pub-3940256099942544/2934735716</string>
-	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
-	<string>ca-app-pub-3940256099942544/4411468910</string>
 	<key>CLIENT_ID</key>
-	<string>959322619782-p0ft30q80r7134q6ljsavdcrluv3k44d.apps.googleusercontent.com</string>
+	<string>354375974134-4vkbhq8rp4dijq39alh7d57rfjaa7t06.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.959322619782-p0ft30q80r7134q6ljsavdcrluv3k44d</string>
+	<string>com.googleusercontent.apps.354375974134-4vkbhq8rp4dijq39alh7d57rfjaa7t06</string>
 	<key>API_KEY</key>
-	<string>AIzaSyB2W6JPSHM0TJW021SFH0TcXU2o2ML8gDo</string>
+	<string>AIzaSyBOQUKlu4yWpAWxAhCEfDMh1iQ9FnRxe6Q</string>
 	<key>GCM_SENDER_ID</key>
-	<string>959322619782</string>
+	<string>354375974134</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>org.citruscircuits.qrflutter</string>
 	<key>PROJECT_ID</key>
-	<string>scouting-2019-avr-cacf9</string>
+	<string>scouting-2019-cmp-d43a4</string>
 	<key>STORAGE_BUCKET</key>
-	<string>scouting-2019-avr-cacf9.appspot.com</string>
+	<string>scouting-2019-cmp-d43a4.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
-	<true></true>
+	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
 	<false></false>
 	<key>IS_APPINVITE_ENABLED</key>
-	<false></false>
+	<true></true>
 	<key>IS_GCM_ENABLED</key>
 	<true></true>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:959322619782:ios:a1bd959b93903331</string>
+	<string>1:354375974134:ios:a1bd959b93903331</string>
 	<key>DATABASE_URL</key>
-	<string>https://scouting-2019-avr-cacf9.firebaseio.com</string>
+	<string>https://scouting-2019-cmp-d43a4.firebaseio.com</string>
 </dict>
 </plist>

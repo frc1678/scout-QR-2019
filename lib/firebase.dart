@@ -7,12 +7,12 @@ Future<FirebaseApp> configureDatabase() async {
         ? const FirebaseOptions(
           googleAppID: '1:959322619782:ios:a1bd959b93903331',
           gcmSenderID: '',
-          databaseURL: 'https://scouting-2019-avr-cacf9.firebaseio.com',
+          databaseURL: 'https://scouting-2019-cmp-d43a4.firebaseio.com',
         )
         : const FirebaseOptions( // Android
-          googleAppID: '1:959322619782:android:a1bd959b93903331',
-          apiKey: 'AIzaSyCrWVk5t0-2QchRmzA7_LfOXJ2uXronJc0',
-          databaseURL: 'https://scouting-2019-avr-cacf9.firebaseio.com',
+          googleAppID: '1:354375974134:android:a1bd959b93903331',
+          apiKey: 'AIzaSyCeR0ofxDgRkY-vw1-CAN_vmruh6P_k9XU',
+          databaseURL: 'https://scouting-2019-cmp-d43a4.firebaseio.com',
         )
   );
 }
