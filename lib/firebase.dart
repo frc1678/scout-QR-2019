@@ -1,5 +1,11 @@
 part of 'main.dart';
 
+// TODO: Check if Firebase configuration in this file is necessary
+// (Currently, Firebase configuration is updated in 3 locations: this file,
+// 'ios/Runner/GoogleService-Info.plist', 'android/app/google-services.json'
+// [The .plist and .json files are automatically generated in the Firebase
+// console])
+
 Future<FirebaseApp> configureDatabase() async {
   return await FirebaseApp.configure(
       name: 'db2',
